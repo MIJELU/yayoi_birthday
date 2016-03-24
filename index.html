@@ -1,1 +1,65 @@
-yayoi_baka 
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>타카츠키 야요이의 생일을 축하합니다.</title>
+    <script src="https://code.jquery.com/jquery-2.2.2.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.7.8/jquery.fullPage.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.7.8/jquery.fullPage.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico">
+    <link rel="shortcut icon" href="favicon.ico">
+    <meta name="viewport" conteent="width=device-width">
+    <meta name="description" content="2016 타카츠키 야요이의 생일을 축하합니다.">
+  </head>
+  <body>
+    <div id="controller">
+      <!--MusicPlayer Controller-->
+      <audio src="m/b.mp3" id="bgmPlayer" controls autoplay loop type="audio/mpeg">
+      </audio>
+    </div>
+    <div id="pageController">
+      <!-- page Tracer -->
+      <ol id="pageIndicator">
+        <li class="on"></li>
+        <li class="off"></li>
+        <li class="off"></li>
+      </ol>
+    </div>
+    <div id="fullpage">
+      <div class="section bgBlur page1">
+        <h1>
+          <time datetime="2016-03-25">3월 25일은,</time>
+        </h1>
+        <p>
+          타카츠키 야요이의 생일입니다!
+        </p>
+      </div>
+      <div class="section bgBlur page2">
+        <h1>
+          ζ*'ヮ')ζ  쓸 내용이 생각나지 않는다던가...  ζ*'ヮ')ζ
+        </h1>
+        <p>ζ*'ヮ')ζ ζ*'ヮ')ζ ζ*'ヮ')ζ ζ*'ヮ')ζ ζ*'ヮ')ζ ζ*'ヮ')ζ </p>
+      </div>
+      <div class="section bgBlur page3">
+        <h1>이 페이지는 실제 인증 후 추가될 예정입니다.</h1>
+      </div>
+    </div>
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+      <filter id="blur">
+        <feGaussianBlur stdDeviation="6" />
+      </filter>
+    </svg>
+  </body>
+  <script>
+    $(document).ready(function() {
+      $('#fullpage').fullpage({
+          anchors: ['intro', 'emo', 'certify'],
+          afterLoad: function(anchorLink, index) {
+              $( ".on" ).addClass( "off" ).removeClass("on");
+              $("#pageIndicator").children().eq(index-1).addClass("on").removeClass("off");
+          }
+      });
+    });
+  </script>
+</html>
